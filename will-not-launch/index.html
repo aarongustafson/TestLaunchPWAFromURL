@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>Testing How to Launch a PWA from a URL on Windows</title>
+  <link rel="manifest" href="manifest.json">
+  <!--  Styles  -->
+  <link rel="stylesheet" href="/c/default.css">
+</head>
+<body>
+  <h1>Testing How to Launch a PWA from a URL on Windows</h1>
+  <p>You should be able to browse to this page without the PWA being launched.</p>  
+  
+  <!-- Scripts -->
+  <script src="/j/main.js"></script>
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
+</body>
+</html>

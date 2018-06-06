@@ -17,14 +17,15 @@ addEventListener('install', installEvent => {
 addEventListener('fetch', fetchEvent => {
   const request = fetchEvent.request;
   fetchEvent.respondWith(
-    // First, look in the cache.
-    caches.match(request)
-      .then( responseFromCache => {
-        if (responseFromCache) {
-          return responseFromCache;
-        }
-        // Otherwise fetch from the network.
-        return fetch(request);
-      }) // end match then
+    caches.open(staticCacheName).then(function(cache) {
+      return fetch(event.request)
+              .then(function(response) {
+                cache.put(event.request, response.clone());
+                return response;
+              })
+              .catch(function() {
+                return caches.match(event.request);
+              });
+    })
   ); // end respondWith
 }); // end addEventListener

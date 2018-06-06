@@ -9,7 +9,7 @@ if ( 'Windows' in window && 'caches' in window )
   $output.innerHTML += 'This is an installed PWA\r\n';
   
   var WinRT_js_file = '/j/WinRT.js',
-      cache_name = 'WinRT';
+      cache_name = 'staticfiles';
   
   function addWinRTJS() {
     $output.innerHTML += 'Adding WinRT JS to the Page\r\n';

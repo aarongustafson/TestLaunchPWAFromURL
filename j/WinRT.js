@@ -1,5 +1,6 @@
 function activationHandler( e )
 {
+	output.innerHTML += 'Activated\r\n';
   if ( e.kind == ActivationKind.Protocol )
   {
     console.log(e);

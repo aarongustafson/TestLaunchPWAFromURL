@@ -1,0 +1,9 @@
+﻿[{
+  "packageFamilyName": "INSERT-YOUR-PACKAGE-IDENTITY-NAME-HERE_1.0.0.0_neutral__1acbdb1knbgkm",
+  "paths": [
+		"/will-launch"
+	],
+  "excludePaths": [
+    "/will-not-launch"
+  ]
+ }]

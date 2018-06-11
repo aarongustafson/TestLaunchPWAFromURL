@@ -18,13 +18,13 @@ addEventListener('fetch', fetchEvent => {
   const request = fetchEvent.request;
   fetchEvent.respondWith(
     caches.open(staticCacheName).then(function(cache) {
-      return fetch(event.request)
+      return fetch(fetchEvent.request)
               .then(function(response) {
-                cache.put(event.request, response.clone());
+                cache.put(fetchEvent.request, response.clone());
                 return response;
               })
               .catch(function() {
-                return caches.match(event.request);
+                return caches.match(fetchEvent.request);
               });
     })
   ); // end respondWith

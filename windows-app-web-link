@@ -1,9 +1,5 @@
 ﻿[{
   "packageFamilyName": "EasyDesigns.URL2PWA_c04pf38ts8aza",
-  "paths": [
-		"/will-launch"
-	],
-  "excludePaths": [
-    "/will-not-launch"
-  ]
+  "paths": [ "*" ],
+  "excludePaths": [ "/will-not-launch/*" ]
  }]
